@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_DataType.html</title>
+</head>
+<body>
+    <h1>javascript 데이터 type</h1> 
+    <p><strong>array</strong>type</p>
+    <script>
+        //배열에는 주로 한가지 type 의 데이터만 담는게 일반적이다.
+        let nums=[10,20,30,40,50];
+        let names=["김구라","해골","원숭이","주뎅이","덩어리"];
+        let data=[true, true, false, false, true];
+
+        //회원 목록을 담고 싶다면...
+        //회원 한명의 정보가 여러개의 데이터로 구성되어 있다  {}
+        let members=[
+        {num:1, name:"김구라", addr:"노량진"},
+        {num:2, name:"해골", addr:"행신동"},
+        {num:3, name:"원숭이", addr:"상도동"}
+      ];
+        //array type
+        let a=members;
+        //object type
+        let b=members[0];
+        //number type 1
+        let c=members[0].num;
+        //string type
+        let d=members[0].name;
+        //string type '노량진'
+        let e=members[0].addr;
+
+        /*
+        1.number type
+
+        산술연산 가능 let a=10;
+        
+        2.string type
+
+        문자 데이터를 다룰때 사용 let b="abcd";
+
+        3.boolean type
+
+        논리 데이터 참, 거짓을 나타낼때 사용 let c=true;
+
+        4.object type
+
+        여러개의 데이터를 key:value 의 쌍으로 관리하고 싶을때 let d={};
+
+        5.array type
+
+        여러개의 순서가 중요한 데이터를 index 로 관리하고 싶을때 let e=[];
+
+        6.function type
+
+        특정시점에 일괄 실행할 javascript 를 모아 놓고 싶을때
+        */
+
+
+    </script>   
+</body>
+</html>         

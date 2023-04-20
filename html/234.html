@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my-table{
+            border-collapse: collapse;
+            background-color: aquamarine;
+        }
+        .my-table-one{
+            background-color: aqua;
+        }
+        .my-table-two{
+            background-color: aquamarine
+        ;
+        }
+    </style>
+</head>
+<body>
+    <h1>table 요소 사용하기</h1>
+    <table border="1" class="my-table">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>김구라</th>
+                <th>노량진</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th>해골</th>
+                <th>행신동</th>
+            </tr>
+        </tbody>
+    </table>
+    <h1>다른테이블 만들기</h1>
+    <table border="1" class="my-table">
+        <colgroup>
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="150">
+
+    </colgroup>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>수학</th>
+                <th>과학</th>
+                <th>영어</th>
+                <th>물리</th>
+                <th>일반 상식</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="my-table-one">
+                <th>데이비드</th>
+                <th>85</th>
+                <th>87</th>
+                <th>88</th>
+                <th>92</th>
+                <th>88</th>
+            </tr>
+            <tr class="my-table-two">
+                <th>리차드</th>
+                <th>91</th>
+                <th>81</th>
+                <th>78</th>
+                <th>71</th>
+                <th>74</th>
+            </tr>
+            <tr class="my-table-one">
+                <th>존</th>
+                <th>81</th>
+                <th>86</th>
+                <th>88</th>
+                <th>84</th>
+                <th>92</th>
+            </tr>
+            <tr class="my-table-two">
+                <th>토니</th>
+                <th>84</th>
+                <th>86</th>
+                <th>87</th>
+                <th>82</th>
+                <th>81</th>
+            </tr>
+            <tr class="my-table-one">
+                <th>스콧</th>
+                <th>71</th>
+                <th>79</th> 
+                <th>82</th>
+                <th>88</th>
+                <th>89</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
