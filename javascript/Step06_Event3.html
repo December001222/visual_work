@@ -13,7 +13,7 @@
     <input type="text" id="result2">
     <script>
         document.querySelector("#inputMsg").addEventListener("keyup", (event)=>{
-            //event 에는 발생한 key event 에 대한 정보가 들어 있다. 
+            //event 에는 발생한 key event 에 대한 정보가 들어 있다.     
             console.log("event");
             //입력한 문자열을 읽어와서
             let msg=event.target.value;
@@ -22,8 +22,8 @@
             //만일 enter 키를 눌렀다면
             if(event.key == "Enter"){
                 event.target.value="";
-                document.querySelector("#result").innerText="";
-                document.querySelector("#result2").value=msg;
+                document.querySelector("#result").innerText="전송완료";
+                document.querySelector("#result2").value=msg;   
             }
         });
     </script>
