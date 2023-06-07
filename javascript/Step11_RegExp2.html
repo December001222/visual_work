@@ -16,7 +16,12 @@
             //1. 입력한 문자열을 읽어와서
             const msg=e.target.value;
             //2. 반드시(한글자 이상) 입력해야 하고특수문자는 허용하지 않습니다
-            let regMsg=/^[a-zA-Z0-9]+$/;
+            //let regMsg=/^[a-zA-Z0-9]+$/;
+            //let regMsg=/^[\w]+$/; 와 동치
+            
+            //문자열로 정규표현식을 작성할때 역슬래시 하나당 역슬래시 두개를 작성해야한다.
+            let regMsg=new RegExp("^[\\w]+$");
+
             const  isWork=regMsg.test(msg);
             //id 가 result 인 p요소의 innerText 로 "pass" 를 출력하고
             //만족하지 않으면 "fail" 을 출력
