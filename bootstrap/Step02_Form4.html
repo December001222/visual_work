@@ -12,14 +12,19 @@
         <h1>다양한 form 디자인</h1>
         <form action="signup">
             <div class="form-floating mb-2">
-                <input class="form-control" type="text" id="id" placeholder="아이디 입력">
+                <input class="form-control" type="text" name="id" id="id" placeholder="아이디 입력">
                 <label for="id">아이디</label>
             </div>
             <div class="form-floating mb-2">
-                <input class="form-control" type="password" id="pwd" placeholder="비밀번호 입력">
+                <input class="form-control" type="password" name="pwd" id="pwd" placeholder="비밀번호 입력">
                 <label for="pwd">비밀번호</label>
             </div>
+            <!--request.getParameter("job")했을때 
+                value 값을 명시하지 않았을경우 option 사이의 값이 전송된다.
+                value 값을 명시했을 경우에는 value 값이 전송된다.
+            -->
             <select class="form-select mb-2 " id="job">
+                <!--이 경우는 null이 리턴된다.-->
                 <option value="">직업선택</option>
                 <option value="programmer">프로그래머</option>
                 <option value="doctor">의사</option>
@@ -28,16 +33,62 @@
                 <legend>성별체크</legend>
                     <!--name 속성의 value 가 같으면 radio 체크박스는 하나만 적용이 된다-->
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="one" name="gender" checked>
+                        <input class="form-check-input" value="man" type="radio" id="one" name="gender" checked>
                         <label class ="form-check-label" for="one">남자</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="two" name="gender">
+                        <input class="form-check-input" value="woman" type="radio" id="two" name="gender">
                         <label class ="form-check-label" for="two">여자</label>
                     </div>
             </fieldset>
+            <fieldset>
+                <legend>취미 체크</legend>
+                <!--request.getparameterValues("hobby")라고 해야 value 값을 읽어올 수 있다.
+                리턴 타입은 String 배열이다.        -->
+                <div class="form-check">
+                    <input type="checkbox" value="piano" name="hobby" class="form-check-input" id="piano">
+                    <label class="form-check-label" for="piano">피아노</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" value="game" name="hobby" class="form-check-input" id="game">
+                    <label class="form-check-label" for="game">게임</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" value="etc" name="hobby" class="form-check-input" id="etc">
+                    <label class="form-check-label" for="etc">기타</label>
+                </div>
+            </fieldset>
+                <legend>개인정보 활용 동의</legend>
+            <div class="form-check form-switch">
+                <input class="form-check-input is-valid" type="checkbox" id="allowAll">
+                <label class="form-check-label" for="allowAll">전체 동의</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input allow" type="checkbox" value="yes" name="allowEmail" id="allowEmail">
+                <label class="form-check-label" for="allowEmail">이메일 수신여부</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input allow" type="checkbox" value="yes" name="allowMessage" id="allowMessage">
+                <label class="form-check-label" for="allowMessage">광고성 문자 수신여부</label>
+            </div>
             <button class="btn btn-outline-primary" type="submit">가입</button>
         </form>
     </div>
+    <script>
+        document.querySelector("#allowAll").addEventListener("change",(e)=>{
+            //모두 동의 체크 여부를 알아낸다.
+            const isChecked=e.target.checked;
+            //클래스가 allow 인 모든 요소의 참조값을 배열로 얻어내기
+            const allows=document.querySelectorAll(".allow");
+            //반복문 돌면서
+            // for(let i=0; i<allows.length; i++){
+            //     //모든 checkbox 의 check 상태를 바꿔주기
+            //     allows[i].checked=isChecked;
+            // }     
+            allows.forEach((item)=>{
+                item.checked=isChecked;
+            });      
+        });
+    </script>
 </body>
 </html>
