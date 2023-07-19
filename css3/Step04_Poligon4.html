@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step04_polygon3.html</title>
+    <title>Step04_polygon4.html</title>
     <style>
         /* 폭 80% 의 크기를 가지는 가운데 정렬된 container */
         .container{
@@ -71,6 +71,29 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
     <script>
+        const animalNames = [
+            '사자',
+            '호랑이',
+            '곰',
+            '기린',
+            '코끼리',
+            '원숭이',
+            '판다',
+            '코뿔소',
+            '얼룩말',
+            '침팬지',
+            '하이에나',
+            '코브라',
+            '하마',
+            '오랑우탄',
+            '악어',
+            '사슴',
+            '수달',
+            '여우',
+            '족제비',
+            '부엉이'
+        ];
+
         //n 각형의 폭을 함수에 전달하면 div 를 배치할때 rotateY 값과 translateZ 가 Object 로 리턴되는 함수 
         function getAngleNtz(n, width) {
             var angle = 360 /n ;
@@ -83,7 +106,7 @@
         }
 
         //n각형
-        const n=12;
+        const n=10;
         let angle, tz;
         // y 축 기준 회전하는 값을 저장할 변수 선언하고 초기값 0 대입
         let rY=0;
@@ -91,12 +114,11 @@
         // 만들어야 할 div 가 n 개 이기 때문에 반복문 n번 돌기
         for(let i=0; i<n; i++){
             //div 를 만들어서 
-            const div=document.createElement("div");
-            //innerText 를 출력하고 
-            div.innerText=i+1;
+            const div=document.createElement("div");    
             //.polygon 에 추가하기
             document.querySelector(".polygon").append(div);
         }
+
 
         //페이지 로딩 시점에 한번 배치
         transformDiv();
