@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reRender4.html</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" > 
+    function App (){
+        const [minutes, setMinutes] = React.useState()
+        function onChange(e){
+            setMinutes(e.target.value)
+        }
+        return(
+            <div>
+                <h1 className="hi">Super Converter</h1>
+                <label htmlFor="minutes">분</label>
+                <input 
+                    value={minutes} 
+                    id="minutes" 
+                    placeholder="분" 
+                    type="number"
+                    onChange={onChange}
+                    />
+                    <h4>바꾼시간 {minutes}</h4>
+                <label htmlFor="hours">시간</label>
+                <input id="hours" placeholder="시간" type="number"/>
+            </div>
+        );
+    }
+        ReactDOM.render(<App/>, root )
+</script>
+</html> 

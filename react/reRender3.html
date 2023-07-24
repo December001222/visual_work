@@ -14,13 +14,14 @@
 <script type="text/babel" >
     const root = document.getElementById("root") 
     function App (){
-        const [counter] = Reqct.useState(0);
-        
-        console.log(data);
+        const [counter, setCounter] = React.useState(0);
+        const onClick = () =>{
+            setCounter(counter+1);
+        };
         return(
             <div>
-            <h3>총 누른 횟수: {0}</h3> 
-            <button>누르시오</button>
+            <h3>총 누른 횟수: {counter}</h3> 
+            <button onClick={onClick}>누르시오</button>
         </div>
         );
     }
