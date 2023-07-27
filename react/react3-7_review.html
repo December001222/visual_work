@@ -21,13 +21,13 @@
         function onChange(e){
             setAmount(e.target.value)
         }
-        const reset= () => setAmount=0;
+        const reset= () => setAmount(0);
         const onFlip = () => {
             reset()
-            setInverted((current) => !current)};
+            setInverted((current) => !current)
+        };
         return(
             <div>
-                <!-- class, for 을 사용할 땐 htmlFor,className 을 사용해야한다. -->
                 <h1 className="hi">Super Converter</h1>
                 <div>
                     <label htmlFor="minutes">분</label>
@@ -47,11 +47,11 @@
                     id="hours" 
                     placeholder="시간" 
                     type="number"
-                    disabled={inverted}
+                    disabled={!inverted}
                     onChange={onChange}
                     />
                 </div>
-                <button onChange={reset}>리셋</button>
+                <button onClick={reset}>리셋</button>
                 <button onClick={onFlip}>{inverted ? "되돌리기" : "전환"}</button>
             </div>
         );
