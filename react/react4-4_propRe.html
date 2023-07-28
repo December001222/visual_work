@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reRender4.html</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" > 
+    /*  
+        [ PropTypes]
+        우리가 필요로 하는 컴포넌트에 대한 오류를 얻어오기 위해 설치했다
+
+        우리가 바꾸고자 한것은 버튼에서의 폰트사이즈와 텍스트이기 때문에
+        Btn 컴포넌트를 복붙하지 않고 props 를 만든 것이다
+    */
+    function Btn({text, fontSize = 12}){
+        return  (
+            <button 
+                style={{
+                backgroundColor : "tomato",
+                color:"white",
+                padding:"10px 20px",
+                border:0,
+                borderRadius:10,
+                fontSize: fontSize
+            }}
+            > 
+                {text}
+            </button>
+        )
+    }
+    Btn.propTypes = {
+        text : PropTypes.string.isRequired,
+        fontSize: PropTypes.number,
+    };
+    function App (){
+        return(
+            <div>
+                <Btn text="Save Changes" fontSize={18}/>
+                <Btn text={"Continue"}/>
+            </div>
+        );
+    }   
+        const root = document.getElementById("root")
+        ReactDOM.render(<App/>, root )
+</script>
+</html> 
