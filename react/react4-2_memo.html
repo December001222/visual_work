@@ -12,24 +12,25 @@
 <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel" > 
-    function Btn(){
+    function Btn({banana}){
         return <button style={{
            backgroundColor : "tomato",
            color:"white",
            padding:"10px 20px",
            border:0,
            borderRadius:10
-        }}>변경사항 저장</button>
+        }}>{banana}</button>
     }
     function ConfirmBtn(){
-        return <button>확인test</button>
+        return <button>확인</button>
     }
     
     function App (){
         return(
             <div>
-                <Btn/>
-                <Btn/>  
+                
+                <Btn banana="Save Changes" x={false}/>
+                <Btn banana="Continue" y={4}/>  
             </div>
         );
     }   
